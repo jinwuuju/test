@@ -626,7 +626,7 @@ const vac=K.filter(k=>!asg.some(a=>a.k==k)).map(k=>{let bi=0,bs=-1;M.forEach((m,
 const capI=(()=>{const x=asg.findIndex(a=>a.k=='CAP');if(x>=0)return x;let bi=0;M.forEach((m,i)=>{if(ROLE.CAP[3](m)>ROLE.CAP[3](M[bi]))bi=i});return bi})();
 const shared=M.filter(m=>m.ao.slice(0,3).includes(tao[0])).length;
 const pj=PROJ.map(([a,c])=>{const rv=rvec(c);return [a,R0(50+50*pear(RK.map(k=>tRS[k]),RK.map(k=>rv[k])))]}).sort((a,b)=>b[1]-a[1]);
-const HEUNG=`크루 전체가 ${RI[tro[0]]}·${RI[tro[1]]} 쪽으로 끌려요. ${ACT[tro[0]]}이 필요한 출범 초기에 누구보다 빠르게 결과를 냅니다. `+(shared>=Math.ceil(n*.6)?`${n}명 중 ${shared}명이 ${AN[tao[0]]}을(를) 상위 엔진으로 공유해 “왜 하는가”에 대한 합의도 빨라요.`:'엔진이 서로 달라 처음엔 목표 합의에 시간이 걸리지만, 그만큼 시야가 넓어요.')+` 점화 담당은 ${nm(capI)}예요.`;
+const HEUNG=`크루 전체가 ${RI[tro[0]]}·${RI[tro[1]]} 쪽으로 끌려요. ${ACT[tro[0]]}이 필요한 출범 초기에 누구보다 빠르게 결과를 냅니다. `+(shared>=Math.ceil(n*.6)?`${n}명 중 ${shared}명이 ${AN[tao[0]]}을(를) 상위 엔진으로 공유해 “왜 하는가”에 대한 합의도 빨라요.`:'엔진이 서로 달라 처음엔 목표 합의에 시간이 걸리지만, 그만큼 시야가 넓어요.')+` 점화 담당 · ${nm(capI)}`;
 const SEONG=`${nm(bp.i)} × ${nm(bp.j)} 조합(궁합 ${bp.T})이 이 크루의 엔진이에요. 두 사람이 핵심 업무를 함께 쥐고, ${pj[0][0]}처럼 크루의 ${RI[tro[0]]} 성향을 살리는 미션을 만나면 전성기가 와요.`;
 const SOE=gaps.length?`${gaps.map(k=>RI[k]).join('·')} 업무, 즉 ${ACT[gaps[0]]}을 즐기는 사람이 없어요. 처음엔 누군가 떠맡지만 점점 미뤄지고 쌓이며, 그 더미가 크루가 서서히 식는 지점이에요.`:vac.length&&vac[0].bs<50?`${ROLE[vac[0].k][0]} 자리(${ROLE[vac[0].k][2]})가 비어 있어요. 이 일이 필요할 때마다 진행이 멈추고, 그게 반복되며 추진력이 떨어져요.`:`뚜렷한 사각지대는 없어요. 대신 모두가 잘하는 ${RI[tro[0]]} 일로 몰리며 같은 일을 두 번 하는 낭비가 생기기 쉬워요.`;
 const MC=[];if(wp.tp<60)MC.push([100-wp.tp,`${nm(wp.i)} × ${nm(wp.j)} · ${wp.why[0]}. 마감이 몰리는 순간 이 둘의 충돌이 크루 전체로 번질 수 있어요.`]);
